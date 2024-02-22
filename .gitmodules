@@ -3,4 +3,4 @@
 	url = ./hello_cargo/
 [submodule "hello_world"]
 	path = hello_world
-	url = ./hello_world/
+	url = https://github.com/kangp3/rust_hello_world.git
