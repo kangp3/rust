@@ -1,0 +1,6 @@
+[submodule "hello_cargo"]
+	path = hello_cargo
+	url = ./hello_cargo/
+[submodule "hello_world"]
+	path = hello_world
+	url = ./hello_world/
