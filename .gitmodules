@@ -1,6 +1,6 @@
 [submodule "hello_cargo"]
 	path = hello_cargo
-	url = ./hello_cargo/
+	url = https://github.com/kangp3/rust_hello_cargo.git
 [submodule "hello_world"]
 	path = hello_world
 	url = https://github.com/kangp3/rust_hello_world.git
