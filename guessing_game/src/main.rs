@@ -12,7 +12,7 @@ fn main() {
             .read_line(&mut buf)
             .expect("Failed to read line");
 
-        let input: u32 = match buf.trim().parse::<u32>() {
+        let input: u32 = match buf.trim().parse() {
             Ok(n) => n,
             Err(_) => {
                 println!("Please input a number");
