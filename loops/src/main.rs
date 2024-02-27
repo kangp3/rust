@@ -38,4 +38,9 @@ fn main() {
         count -= 1;
     }
     println!("LIFTOFF!!!");
+
+    let a = [10, 20, 30, 40, 50];
+    for i in a {
+        println!("the value is: {i}");
+    }
 }
