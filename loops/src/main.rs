@@ -43,4 +43,9 @@ fn main() {
     for i in a {
         println!("the value is: {i}");
     }
+
+    for i in (1..4).rev() {
+        println!("{i}!");
+    }
+    println!("LIFTOFF!!!");
 }
