@@ -1,10 +1,13 @@
 fn main() {
     let mut s = String::from("hello");
-    let s1 = &mut s;
+    s.push_str(", ");
+    change(&mut s);
+    s.push_str("!");
+    println!("s: {s}");
+}
 
-    s1.push_str(", world");
-
-    println!("s: {s}, s1: {s1}");
+fn change(s: &mut String) {
+    s.push_str("world");
 }
 
 // error[E0502]: cannot borrow `s` as immutable because it is also borrowed as mutable
