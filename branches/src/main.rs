@@ -1,6 +1,6 @@
 fn main() {
     //let number = 3;
-    let number = 5;
+    let number = 6;
     
     if number < 5 {
         println!("condition was true");
@@ -17,4 +17,8 @@ fn main() {
     } else {
         println!("number is not divisible by 4, 3, or 2");
     }
+
+    let condition = true;
+    let x = if condition { 5 } else { 2 };
+    println!("The value of x is: {x}");
 }
