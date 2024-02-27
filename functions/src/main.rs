@@ -1,5 +1,11 @@
 fn main() {
     print_labeled_measurement(5, 'h');
+
+    let y = {
+        let x = 3;
+        x + 1
+    };
+    println!("The value of y is: {y}");
 }
 
 fn print_labeled_measurement(x: i32, label: char) {
