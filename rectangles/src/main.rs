@@ -5,6 +5,13 @@ struct Rectangle {
 }
 
 impl Rectangle {
+    fn new(w: u32, h: u32) -> Self {
+        Rectangle{
+            width: w,
+            height: h,
+        }
+    }
+
     fn area(&self) -> u32 {
         self.width * self.height
     }
@@ -15,18 +22,9 @@ impl Rectangle {
 }
 
 fn main() {
-    let rect1 = Rectangle{
-        width: 30,
-        height: 50
-    };
-    let rect2 = Rectangle{
-        width: 25,
-        height: 40
-    };
-    let rect3 = Rectangle{
-        width: 50,
-        height: 30
-    };
+    let rect1 = Rectangle::new(30, 50);
+    let rect2 = Rectangle::new(25, 40);
+    let rect3 = Rectangle::new(50, 30);
 
     println!("Area of rect1 is: {}", rect1.area());
     println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
