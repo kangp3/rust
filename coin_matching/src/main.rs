@@ -65,13 +65,13 @@ fn main() {
 }
 
 fn value_in_cents(c: Coin) -> u32 {
+    if let Coin::Quarter(state) = &c {
+        println!("Quarter has state {:?}!", state);
+    }
     match c {
         Coin::Penny => 1,
         Coin::Nickel => 5,
         Coin::Dime => 10,
-        Coin::Quarter(state) => {
-            println!("Quarter has state {:?}!", state);
-            25
-        }
+        Coin::Quarter(_) => 25,
     }
 }
