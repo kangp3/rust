@@ -29,7 +29,7 @@ fn median(v: &Vec<i32>) -> f32 {
     if len % 2 == 1 {
         return v[len/2] as f32;
     }
-    (v[len/2] + v[len/2 + 1]) as f32 / 2 as f32
+    (v[len/2 - 1] + v[len/2]) as f32 / 2 as f32
 }
 
 fn mode(v: &Vec<i32>) -> i32 {
