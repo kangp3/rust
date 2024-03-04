@@ -3,7 +3,7 @@ use std::io::Write;
 use std::collections::HashMap;
 
 fn main() {
-    let mut directory: HashMap<&str, Vec<&str>> = HashMap::new();
+    let mut directory: HashMap<String, Vec<String>> = HashMap::new();
 
     loop {
         print!("> ");
@@ -21,10 +21,36 @@ fn main() {
                 }
                 let name = String::from(words[1]);
                 let department = String::from(words[3]);
-                directory.entry(&department).and_modify(|employees| { employees.push(&name) }).or_insert(vec!());
                 println!("Add {} to {}!", &name, &department);
+                directory.entry(department).and_modify(|employees| { employees.push(name.clone()); employees.sort() }).or_insert(vec!(name.clone()));
             }
-            "list" => println!("List!"),
+            "list" => {
+                if words.len() > 2 {
+                    println!("List command malformed (ex: 'List', 'List Engineering')");
+                }
+                match words.get(1) {
+                    Some(department) => {
+                        match directory.get(*department) {
+                            Some(emps) => {
+                                for name in emps {
+                                    println!("{name}");
+                                }
+                            }
+                            None => println!("Department {department} not found"),
+                        }
+                    }
+                    None => {
+                        let mut keys: Vec<&String> = directory.keys().collect();
+                        keys.sort();
+                        for department in keys {
+                            println!("{department}");
+                            for name in &directory[department] {
+                                println!("  {name}");
+                            }
+                        }
+                    }
+                }
+            }
             cmd => println!("Command '{cmd}' not recognized"),
         }
     }
