@@ -10,7 +10,7 @@ impl Rectangle {
     }
 }
 
-fn add_2(i: i32) -> i32 {
+pub fn add_2(i: i32) -> i32 {
     i + 2
 }
 
