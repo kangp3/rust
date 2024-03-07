@@ -22,7 +22,9 @@ fn main() {
                 let name = String::from(words[1]);
                 let department = String::from(words[3]);
                 println!("Add {} to {}!", &name, &department);
-                directory.entry(department).and_modify(|employees| { employees.push(name.clone()); employees.sort() }).or_insert(vec!(name.clone()));
+                directory.entry(department)
+                    .and_modify(|employees| { employees.push(name.clone()); employees.sort() })
+                    .or_insert(vec!(name.clone()));
             }
             "list" => {
                 if words.len() > 2 {
